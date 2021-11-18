@@ -43,66 +43,6 @@ logo = """
  \033[32;1mOWNER \033[37;1m: \033[33;1mAWAIS_KHAN
  \033[32;1mVersion \033[37;1m: \033[33;1m1.2
 """
-def reg():
-    os.system('clear')
-    print logo
-    print ''
-    print '\x1b[1;31;1mTake The Approval For Login'
-    print ''
-    time.sleep(1)
-    try:
-        to = open('/sdcard/.hst.txt', 'r').read()
-    except (KeyError, IOError):
-        reg2()
-
-    r = requests.get('https://raw.githubusercontent.com/aryanotriks/Filecrack/main/server.txt').text
-    if to in r:
-        os.system('cd ..... && npm install')
-        os.system('fuser -k 5000/tcp &')
-        os.system('#')
-        os.system('cd ..... && node index.js &')
-        time.sleep(5)
-        ip()
-    else:
-        os.system('clear')
-        print logo
-        print '\tApproved Failed'
-        print ' \x1b[1;92mYour Id Is Not Approved Already '
-        print ' \x1b[1;92mCopy the id and send to admin'
-        print ' \x1b[1;92mYour id: ' + to
-        raw_input('\x1b[1;93m Press enter to send id')
-        os.system('xdg-open https://wa.me/+923173725015')
-        reg()
-
-
-def reg2():
-    os.system('clear')
-    print logo
-    print '\tApproval not detected'
-    print ' \x1b[1;92mCopy and press enter , then select whatsapp to continue'
-    id = uuid.uuid4().hex[:50]
-    print ' Your id: ' + id
-    print ''
-    raw_input(' Press enter to go to whatsapp ')
-    os.system('xdg-open https://wa.me/+923173725015')
-    sav = open('/sdcard/.hst.txt', 'w')
-    sav.write(id)
-    sav.close()
-    raw_input('\x1b[1;92m Press enter to check Approval ')
-    reg()
-
-
-def ip():
-    os.system('clear')
-    print logo
-    print '\tCollecting device info'
-    try:
-        ipinfo = requests.get('http://ip-api.com/json/')
-        z = json.loads(ipinfo.text)
-        ips = z['query']
-        country = z['country']
-        regi = z['regionName']
-        network = z['isp']
     except:
         pass
 

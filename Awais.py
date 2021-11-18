@@ -43,9 +43,6 @@ logo = """
  \033[32;1mOWNER \033[37;1m: \033[33;1mAWAIS_KHAN
  \033[32;1mVersion \033[37;1m: \033[33;1m1.2
 """
-    except:
-        pass
-
     print '\x1b[1;92m Your ip: ' + ips
     time.sleep(1)
     print '\x1b[1;92m Your country: ' + country
